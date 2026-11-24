@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640">
+  <rect width="480" height="640" fill="#E5D9C3"/>
+  <!-- narrow rib top -->
+  <rect x="190" y="168" width="100" height="130" rx="2" fill="#C4B99A"/>
+  <!-- wide pleated skirt -->
+  <path d="M165 298 L315 298 L355 580 L125 580 Z" fill="#B8AC8C"/>
+  <!-- pleat lines -->
+  <line x1="210" y1="300" x2="195" y2="578" stroke="#A89C7C" stroke-width="1"/>
+  <line x1="240" y1="298" x2="240" y2="580" stroke="#A89C7C" stroke-width="1"/>
+  <line x1="270" y1="300" x2="285" y2="578" stroke="#A89C7C" stroke-width="1"/>
+  <!-- botanical seam -->
+  <path d="M182 350 Q220 320 258 355 Q280 375 290 400 Q300 425 275 440" stroke="#49394F" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- head -->
+  <ellipse cx="240" cy="120" rx="36" ry="42" fill="#D4C8A8"/>
+  <!-- hair line -->
+  <path d="M205 110 Q240 90 275 110" stroke="#625e59" stroke-width="2" fill="none"/>
+  <text x="240" y="620" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#625e59">Look 02 / 06 — Pressed Stem</text>
+</svg>

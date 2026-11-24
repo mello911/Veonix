@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640">
+  <rect width="480" height="640" fill="#D1CDB8"/>
+  <!-- canvas trouser: wide waistband, narrow ankle -->
+  <!-- waistband -->
+  <rect x="175" y="300" width="130" height="30" rx="2" fill="#4E5435"/>
+  <!-- trouser legs -->
+  <path d="M175 330 L215 580 L240 580 L240 330 Z" fill="#65694B"/>
+  <path d="M305 330 L265 580 L240 580 L240 330 Z" fill="#65694B"/>
+  <!-- top (simple knit) -->
+  <rect x="195" y="168" width="90" height="132" rx="2" fill="#8C8F70"/>
+  <!-- arms -->
+  <rect x="145" y="175" width="50" height="110" rx="20" fill="#8C8F70"/>
+  <rect x="285" y="175" width="50" height="110" rx="20" fill="#8C8F70"/>
+  <!-- ankle gather lines -->
+  <line x1="208" y1="560" x2="222" y2="568" stroke="#55593C" stroke-width="1"/>
+  <line x1="258" y1="560" x2="272" y2="568" stroke="#55593C" stroke-width="1"/>
+  <!-- head -->
+  <ellipse cx="240" cy="120" rx="37" ry="43" fill="#D4C8A8"/>
+  <text x="240" y="620" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#625e59">Look 05 / 06 — Still Water</text>
+</svg>

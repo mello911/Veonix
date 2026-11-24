@@ -1,0 +1,162 @@
+:root {
+  --stock: #faf8f3;
+  --sheet: #fffdf8;
+  --white: #ffffff;
+  --environment-field: var(--stock);
+  --environment-ink: var(--brand-olive);
+  --decoration-image: none;
+  --ui-page: var(--environment-field);
+  --ui-content: var(--sheet);
+  --ui-text: var(--brand-midnight);
+  --ui-secondary: var(--brand-grape);
+  --ui-muted: #625e59;
+  --ui-border: #c6c0b6;
+  --ui-control-border: #847d75;
+  --ui-link: var(--brand-maroon);
+  --ui-accent: var(--brand-maroon);
+  --ui-selected: var(--brand-midnight);
+  --ui-selected-surface: color-mix(
+    in srgb,
+    var(--brand-beige) 38%,
+    var(--ui-content)
+  );
+  --ui-on-accent: var(--white);
+  --ui-hover: var(--brand-grape);
+  --ui-active: var(--brand-midnight);
+  --ui-focus: var(--brand-slate);
+  --ui-error: #882e39;
+  --ui-success: #455331;
+  --ui-disabled-surface: #e9e6df;
+  --ui-disabled-text: #625d58;
+  --media-mat: var(--white);
+
+  --face-editorial: Georgia, "Times New Roman", serif;
+  --face-copy: Arial, Helvetica, sans-serif;
+  --face-index: "Courier New", Courier, monospace;
+  --step-1: 0.25rem;
+  --step-2: 0.5rem;
+  --step-3: 0.75rem;
+  --step-4: 1rem;
+  --step-5: 1.5rem;
+  --step-6: 2rem;
+  --step-7: 3rem;
+  --layout-max: 80rem;
+  --layout-margin: clamp(1rem, 4vw, 4rem);
+  --layout-gap: clamp(1.25rem, 3vw, 3rem);
+  --column-index: 11rem;
+  --column-story: minmax(0, 1fr);
+  --column-aside: 14rem;
+  --inset-panel: clamp(1rem, 2vw, 1.5rem);
+  --section-gap: var(--step-7);
+  --rule: 1px;
+  --rule-strong: 2px;
+  --layer-decoration: 0;
+  --layer-content: 1;
+  --layer-nav: 2;
+  --layer-skip: 3;
+}
+@theme inline {
+  --color-page: var(--ui-page);
+  --color-content: var(--ui-content);
+  --color-ink: var(--ui-text);
+  --color-secondary: var(--ui-secondary);
+  --color-muted: var(--ui-muted);
+  --color-rule: var(--ui-border);
+  --color-control-border: var(--ui-control-border);
+  --color-link: var(--ui-link);
+  --color-accent: var(--ui-accent);
+  --color-on-accent: var(--ui-on-accent);
+  --color-selected: var(--ui-selected);
+  --color-selected-surface: var(--ui-selected-surface);
+  --color-hover: var(--ui-hover);
+  --color-active: var(--ui-active);
+  --color-focus: var(--ui-focus);
+  --color-error: var(--ui-error);
+  --color-success: var(--ui-success);
+  --color-disabled-text: var(--ui-disabled-text);
+  --color-disabled-surface: var(--ui-disabled-surface);
+  --font-sans: var(--face-copy);
+  --font-editorial: var(--face-editorial);
+  --font-mono: var(--face-index);
+}
+@theme {
+  --breakpoint-narrow: 23rem;
+  --breakpoint-compact: 27rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+}
+.type-wordmark {
+  font: bold 2rem/1 var(--face-editorial);
+  letter-spacing: -0.055em;
+}
+.type-title {
+  font: normal clamp(2rem, 3.3vw, 2.625rem) / 1.1 var(--face-editorial);
+  letter-spacing: -0.035em;
+}
+.type-collection {
+  font: italic 1.65rem/1.22 var(--face-editorial);
+}
+.type-section {
+  font: normal 1.5rem/1.2 var(--face-editorial);
+  letter-spacing: -0.025em;
+}
+.type-body {
+  font: 1rem/1.55 var(--face-copy);
+}
+.type-product {
+  font: 600 1rem/1.4 var(--face-copy);
+}
+.type-price {
+  font: 600 0.9375rem/1.4 var(--face-copy);
+  font-variant-numeric: tabular-nums;
+}
+.type-meta,
+.type-index {
+  font: 0.8125rem/1.4 var(--face-index);
+}
+.type-index {
+  font-variant-numeric: tabular-nums;
+}
+.type-nav {
+  font: 600 0.875rem/1.4 var(--face-copy);
+}
+.type-caption {
+  font: 0.8125rem/1.45 var(--face-copy);
+}
+.page-width {
+  width: min(calc(100% - 2 * var(--layout-margin)), var(--layout-max));
+  margin-inline: auto;
+}
+.editorial-columns {
+  display: grid;
+  gap: var(--layout-gap);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (width >= theme(--breakpoint-lg)) {
+  .editorial-columns {
+    grid-template-columns: var(--column-index) var(--column-story) var(
+        --column-aside
+      );
+  }
+}
+.environment-frame {
+  isolation: isolate;
+  position: relative;
+  background-color: var(--environment-field);
+}
+.environment-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--layer-decoration);
+  background-image: var(--decoration-image);
+  pointer-events: none;
+}
+.environment-frame > * {
+  position: relative;
+  z-index: var(--layer-content);
+}
+.media-mat {
+  background-color: var(--media-mat);
+  isolation: isolate;
+}

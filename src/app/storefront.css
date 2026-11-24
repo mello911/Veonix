@@ -1,0 +1,547 @@
+/* ============================================================
+   VEONIX Storefront — homepage layout and component styles
+   Phase 003 — Homepage Layout & Navigation
+   ============================================================ */
+
+/* ---- Utilities ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-secondary { color: var(--ui-secondary); }
+.text-muted     { color: var(--ui-muted); }
+.text-link      { color: var(--ui-link); }
+
+/* ---- Skip link ---- */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  background: var(--ui-accent);
+  color: var(--ui-on-accent);
+  padding: var(--step-2) var(--step-4);
+  font: 600 0.875rem/1.4 var(--face-copy);
+  z-index: var(--layer-skip);
+  transition: transform 0.15s;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ---- Site header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-nav);
+  background: var(--ui-content);
+  border-block-end: var(--rule) solid var(--ui-border);
+}
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--step-3);
+  min-height: 3rem;
+  padding-block: var(--step-2);
+  flex-wrap: wrap;
+}
+.header-wordmark {
+  color: var(--ui-text);
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-inline-end: var(--step-2);
+}
+.header-wordmark:hover { color: var(--ui-link); }
+
+.header-search {
+  flex: 1 1 10rem;
+  max-width: 20rem;
+}
+.header-search-input {
+  width: 100%;
+  min-height: 2rem;
+  padding: var(--step-1) var(--step-3);
+  font-size: 0.875rem;
+}
+
+.header-nav { margin-inline-start: auto; }
+.header-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+.header-nav-link {
+  display: block;
+  padding: var(--step-2) var(--step-3);
+  color: var(--ui-text);
+  text-decoration: none;
+  border-block-end: var(--rule-strong) solid transparent;
+  transition: color 0.1s, border-color 0.1s;
+}
+.header-nav-link:hover {
+  color: var(--ui-link);
+  border-block-end-color: var(--ui-link);
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--step-2);
+  flex-shrink: 0;
+}
+.header-action-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--ui-text);
+  text-decoration: none;
+  border: var(--rule) solid transparent;
+  font-size: 1.1rem;
+  transition: color 0.1s;
+}
+.header-action-btn:hover { color: var(--ui-link); }
+.bag-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--ui-accent);
+  color: var(--ui-on-accent);
+  font: 600 0.65rem/1 var(--face-copy);
+  width: 1.1rem;
+  height: 1.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: var(--rule) solid var(--ui-control-border);
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--ui-text);
+  flex-shrink: 0;
+}
+.mobile-nav {
+  border-block-start: var(--rule) solid var(--ui-border);
+  background: var(--ui-content);
+}
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--step-2) 0;
+}
+.mobile-nav-link {
+  display: block;
+  padding: var(--step-2) var(--layout-margin);
+  color: var(--ui-text);
+  text-decoration: none;
+}
+.mobile-nav-link:hover { color: var(--ui-link); }
+
+/* ---- Storefront env wrapper ---- */
+.storefront-env {
+  min-height: 100svh;
+  background: var(--environment-field);
+}
+.storefront-main {
+  padding-block: var(--step-5);
+}
+
+/* ---- Three-column storefront grid ---- */
+.storefront-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+  align-items: start;
+}
+
+/* ============================================================
+   LEFT COLUMN — Collection Index
+   ============================================================ */
+.col-index {
+  min-width: 0;
+  border: var(--rule) solid var(--ui-border);
+  background: var(--ui-content);
+}
+.index-header {
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-1);
+}
+.col-index .divider {
+  margin: 0;
+}
+.index-description {
+  padding: var(--inset-panel);
+  margin: 0;
+  color: var(--ui-muted);
+  line-height: 1.6;
+}
+.lookbook-controls {
+  padding: var(--inset-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lookbook-btns {
+  display: flex;
+  gap: var(--step-2);
+}
+
+/* Outfit tracklist */
+.outfit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.outfit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--step-3);
+  width: 100%;
+  padding: var(--step-2) var(--inset-panel);
+  background: none;
+  border: none;
+  border-block-start: var(--rule) solid var(--ui-border);
+  cursor: pointer;
+  color: var(--ui-text);
+  text-align: left;
+  transition: background 0.1s;
+}
+.outfit-item:first-child { border-block-start: 0; }
+.outfit-item:hover { background: var(--ui-selected-surface); }
+.outfit-item--selected {
+  background: var(--ui-selected-surface);
+  color: var(--ui-selected);
+}
+.outfit-num {
+  color: var(--ui-muted);
+  flex-shrink: 0;
+  min-width: 1.75rem;
+}
+.outfit-title { flex: 1; }
+.outfit-indicator {
+  color: var(--ui-accent);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* Price + action */
+.index-purchase {
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-3);
+}
+.index-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--step-2);
+  flex-wrap: wrap;
+}
+.index-add-btn { width: 100%; }
+
+/* ============================================================
+   CENTER COLUMN — Fashion Stage
+   ============================================================ */
+.col-stage {
+  min-width: 0;
+  display: grid;
+  gap: 0;
+  border: var(--rule) solid var(--ui-border);
+  background: var(--ui-content);
+}
+
+/* Photography */
+.stage-figure {
+  margin: 0;
+  position: relative;
+  border-block-end: var(--rule) solid var(--ui-border);
+  overflow: hidden;
+  background: var(--media-mat);
+  display: grid;
+}
+.stage-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+.stage-caption {
+  padding: var(--step-2) var(--inset-panel);
+  color: var(--ui-muted);
+  background: var(--ui-content);
+  border-block-start: var(--rule) solid var(--ui-border);
+}
+
+/* Stage details */
+.stage-details {
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-4);
+}
+.stage-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--step-3);
+  justify-content: space-between;
+}
+.wishlist-btn {
+  background: none;
+  border: var(--rule) solid var(--ui-border);
+  cursor: pointer;
+  color: var(--ui-link);
+  font-size: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: color 0.1s, background 0.1s;
+}
+.wishlist-btn:hover,
+.wishlist-btn[aria-pressed="true"] {
+  background: var(--ui-selected-surface);
+  color: var(--ui-accent);
+}
+.stage-description {
+  margin: 0;
+  color: var(--ui-muted);
+}
+.stage-specs {
+  display: grid;
+  gap: var(--step-2);
+  margin: 0;
+}
+.stage-specs > div {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--step-2);
+}
+.stage-specs dt { color: var(--ui-muted); }
+.stage-colors { border: none; padding: 0; margin: 0; }
+.stage-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--step-3);
+  flex-wrap: wrap;
+}
+.stage-price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.stage-price { font-size: 1.125rem; }
+.stage-add-btn {
+  flex: 1 1 10rem;
+  min-height: 2.75rem;
+}
+
+/* ============================================================
+   RIGHT COLUMN — Brand Aside
+   ============================================================ */
+.col-aside {
+  min-width: 0;
+  border: var(--rule) solid var(--ui-border);
+  background: var(--ui-content);
+  display: grid;
+}
+.col-aside .divider { margin: 0; }
+
+.aside-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--step-3);
+  padding: var(--inset-panel);
+}
+.brand-logo-block {
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--brand-midnight);
+  color: var(--brand-beige);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.brand-logo-mark {
+  font: bold 1.5rem/1 var(--face-editorial);
+  letter-spacing: -0.04em;
+}
+.aside-wordmark { line-height: 1; }
+
+.brand-statement {
+  margin: 0;
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-2);
+}
+.brand-statement p { margin: 0; color: var(--ui-muted); }
+.brand-statement-footer {
+  display: block;
+  color: var(--ui-muted);
+  font-style: normal;
+}
+
+.aside-info {
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-2);
+  margin: 0;
+}
+.aside-info > div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: var(--step-2);
+}
+.aside-info dt { color: var(--ui-muted); }
+
+/* Atmosphere */
+.aside-section-title {
+  padding: var(--inset-panel);
+  padding-block-end: var(--step-2);
+  margin: 0;
+  border-block-end: var(--rule) solid var(--ui-border);
+}
+.atmosphere-note {
+  padding: var(--step-1) var(--inset-panel);
+  margin: 0;
+  font-style: italic;
+  border-block-end: var(--rule) solid var(--ui-border);
+}
+.atmosphere-group {
+  border: none;
+  padding: var(--step-2) var(--inset-panel);
+  margin: 0;
+  border-block-end: var(--rule) solid var(--ui-border);
+}
+.atmosphere-group:last-of-type { border-block-end: none; }
+.atmosphere-label {
+  display: block;
+  color: var(--ui-muted);
+  margin-block-end: var(--step-2);
+}
+.atmosphere-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--step-2);
+}
+.atmosphere-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border: var(--rule) solid var(--ui-control-border);
+  font: 0.8rem/1.4 var(--face-index);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+  color: var(--ui-text);
+}
+.atmosphere-chip:hover {
+  border-color: var(--ui-hover);
+  color: var(--ui-hover);
+}
+.atmosphere-chip--active {
+  background: var(--ui-selected);
+  border-color: var(--ui-selected);
+  color: var(--ui-on-accent);
+}
+
+/* Influences */
+.influence-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-2);
+}
+.influence-list li::before {
+  content: "— ";
+  color: var(--ui-muted);
+}
+
+/* Aside links */
+.aside-links {
+  list-style: none;
+  margin: 0;
+  padding: var(--inset-panel);
+  display: grid;
+  gap: var(--step-3);
+}
+.aside-links a {
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet
+   ============================================================ */
+@media (width >= theme(--breakpoint-md)) {
+  .menu-toggle { display: none; }
+
+  .storefront-columns {
+    grid-template-columns: 14rem 1fr;
+  }
+  /* Right column stacks under center on tablet */
+  .col-aside {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop
+   ============================================================ */
+@media (width >= theme(--breakpoint-lg)) {
+  .menu-toggle { display: none; }
+  .header-nav { display: block; }
+
+  .storefront-columns {
+    grid-template-columns: var(--column-index) var(--column-story) var(--column-aside);
+  }
+  .col-aside {
+    grid-column: auto;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile only
+   ============================================================ */
+@media (width < theme(--breakpoint-md)) {
+  .header-nav { display: none; }
+  .menu-toggle { display: grid; place-items: center; }
+
+  .storefront-columns {
+    /* Photo first, then index, then aside on mobile */
+    grid-template-areas:
+      "stage"
+      "index"
+      "aside";
+  }
+  .col-index { grid-area: index; }
+  .col-stage { grid-area: stage; }
+  .col-aside { grid-area: aside; }
+
+  .header-search { max-width: none; }
+
+  .stage-specs > div {
+    grid-template-columns: 1fr;
+    gap: var(--step-1);
+  }
+  .aside-info > div {
+    grid-template-columns: 1fr;
+    gap: var(--step-1);
+  }
+}

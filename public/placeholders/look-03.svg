@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640">
+  <rect width="480" height="640" fill="#B4C5D5" opacity="0.4"/>
+  <rect width="480" height="640" fill="#E5D9C3" opacity="0.6"/>
+  <!-- oversized dress -->
+  <rect x="145" y="162" width="190" height="390" rx="3" fill="#8FA8BE" opacity="0.8"/>
+  <!-- shoulder detail — dropped -->
+  <rect x="128" y="165" width="30" height="70" rx="2" fill="#7B9AAE" opacity="0.8"/>
+  <rect x="322" y="165" width="30" height="70" rx="2" fill="#7B9AAE" opacity="0.8"/>
+  <!-- pocket lines -->
+  <rect x="165" y="380" width="45" height="4" rx="2" fill="#697F8F"/>
+  <!-- head -->
+  <ellipse cx="240" cy="118" rx="37" ry="43" fill="#D4C8A8"/>
+  <!-- fold memory lines on cloth -->
+  <line x1="145" y1="250" x2="335" y2="252" stroke="#6E8FA3" stroke-width="0.8" opacity="0.6"/>
+  <line x1="145" y1="310" x2="335" y2="308" stroke="#6E8FA3" stroke-width="0.8" opacity="0.4"/>
+  <text x="240" y="620" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#625e59">Look 03 / 06 — Quiet Room</text>
+</svg>

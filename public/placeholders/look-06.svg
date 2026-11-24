@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" width="480" height="640">
+  <rect width="480" height="640" fill="#2A1F2E"/>
+  <!-- slim slip -->
+  <rect x="200" y="168" width="80" height="390" rx="2" fill="#49394F" opacity="0.9"/>
+  <!-- kimono jacket — wide, draped -->
+  <path d="M100 170 L200 185 L200 500 L100 540 Z" fill="#49394F"/>
+  <path d="M380 170 L280 185 L280 500 L380 540 Z" fill="#49394F"/>
+  <!-- kimono body -->
+  <rect x="175" y="162" width="130" height="340" rx="0" fill="#3A2B42"/>
+  <!-- lapel crossing -->
+  <path d="M240 162 L195 230 L195 162 Z" fill="#2E2038"/>
+  <path d="M240 162 L285 230 L285 162 Z" fill="#2E2038"/>
+  <!-- silk sheen lines -->
+  <line x1="100" y1="200" x2="175" y2="250" stroke="#6B5578" stroke-width="1" opacity="0.5"/>
+  <line x1="380" y1="210" x2="305" y2="260" stroke="#6B5578" stroke-width="1" opacity="0.5"/>
+  <!-- head -->
+  <ellipse cx="240" cy="118" rx="38" ry="44" fill="#C8B898"/>
+  <!-- stars -->
+  <circle cx="420" cy="80" r="1.5" fill="#E5D9C3" opacity="0.6"/>
+  <circle cx="60" cy="50" r="1" fill="#E5D9C3" opacity="0.5"/>
+  <circle cx="400" cy="140" r="1" fill="#E5D9C3" opacity="0.4"/>
+  <text x="240" y="628" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#E5D9C3" opacity="0.6">Look 06 / 06 — Night Passage</text>
+</svg>

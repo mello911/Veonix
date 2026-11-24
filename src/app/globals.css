@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@import "../design/tokens.css";
+@import "../design/controls.css";
+@import "./storefront.css";
+
+@layer base {
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: var(--rule-strong) solid var(--ui-focus);
+    outline-offset: 3px;
+  }
+}
